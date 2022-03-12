@@ -16,6 +16,7 @@ public:
 	Vertex();
 
 	//access func if needed
-
+	void setVertexName(string s);
+	string getVertexName();
 
 };

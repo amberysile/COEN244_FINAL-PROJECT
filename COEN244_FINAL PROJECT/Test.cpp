@@ -1,9 +1,9 @@
 //#include <iostream>
-////#include "Vertex.h"
+//#include "Vertex.h"
 //#include "Graph.h"
 //using namespace std;
 //
-//// ref: https://www.geeksforgeeks.org/find-if-there-is-a-path-between-two-vertices-in-a-given-graph/
+// ref: https://www.geeksforgeeks.org/find-if-there-is-a-path-between-two-vertices-in-a-given-graph/
 //class Graph
 //{
 //    int course;    // No. of vertices
@@ -14,7 +14,7 @@
 //    bool isReachable(int s, int d);
 //};
 //
-////course list for sequence corresponding to their IDs
+//course list for sequence corresponding to their IDs
 //const string courses[] = {
 //"coen231",	  // 0
 //"coen243",	  //1
@@ -34,11 +34,11 @@
 //};
 //
 //int main() {
-//	//initialize courseDependancy to have 15 nodes
+//	initialize courseDependancy to have 15 nodess
 //	Graph courseDependancy(15);
 //
-//	//create the edges for these nodes based on prereqs
-//	//16 edges in total 
+//	create the edges for these nodes based on prereqs
+//	16 edges in total 
 //	courseDependancy.addEdge(12,0); //math 204 is a prereq of coen231
 //	courseDependancy.addEdge(12,1);
 //	courseDependancy.addEdge(12,8);

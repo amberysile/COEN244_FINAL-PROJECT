@@ -8,11 +8,11 @@ using namespace std;
 class Graph {
 
 
-private: 
+protected: 
 	//G=(N,E)
 	Edge *edgeArr;
 	Vertex *vertexArr;
-	int size, capacity;
+	int vCounter, eCounter, capacity;
 
 
 public:
@@ -25,26 +25,29 @@ public:
 	//virtual destructor 
 	virtual ~Graph();
 
+	virtual bool addVertex(string courseName) = 0;
+
+
 	//add in one vertex; bool returns if it is added successfully.
-	virtual bool addVertex(Vertex& v) = 0;
+	//virtual bool addVertex(Vertex& v) = 0;
 
 	//addVertices array, each time addVertex is called, the new vertex is added to this array. the passing parameter is an array
-	virtual bool addVertices(Vertex* vArray) = 0;
+	//virtual bool addVertices(Vertex* vArray) = 0;
 
 	//the edges that has connection with this vertex need to be removed
 	virtual bool removeVertex(Vertex& v) = 0;
 
 	//add an edge 
-	virtual bool addEdge(Edge& e) = 0;
+	virtual bool addEdge(string sv, string ev) = 0;
 
 	//remove an edge; as a result, some node may remain as orphan (modified form original code)
 	virtual bool removeEdge(Edge& e) = 0;
 
 	// return true if a vertex exists in a graph
-	virtual bool searchVertex(const Vertex& v) = 0;
+	virtual bool searchVertex(string s) = 0;
 	
 	// return true if an Edge exists in a graph
-	virtual bool searchEdge(const Edge & e) = 0;
+	virtual bool searchEdge(string sv, string ev) = 0;
 
 	// display the whole graph with your own defined format
 	virtual void display() const = 0;

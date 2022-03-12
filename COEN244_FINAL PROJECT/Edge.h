@@ -17,8 +17,13 @@ public:
 	//constructor
 	Edge();
 
+	//destructor 
+	~Edge();
 
 	//accessing func if needed
-
+	void setStartVertex(Vertex*);
+	void setEndVertex(Vertex* ev);
+	Vertex* getStartVertex();
+	Vertex* getEndVertex();
 
 };

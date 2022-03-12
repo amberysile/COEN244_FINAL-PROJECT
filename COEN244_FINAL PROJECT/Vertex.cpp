@@ -15,3 +15,11 @@ Vertex::Vertex() {
 	cout << "The Vertex Constructor is called." << endl; 
 
 }
+
+void Vertex::setVertexName(string s) {
+	vertexName = s;
+}
+
+string Vertex::getVertexName() {
+	return vertexName;
+}

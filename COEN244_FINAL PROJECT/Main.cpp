@@ -83,12 +83,28 @@ int main() {
 	elec.addEdge("engr213", "elec273");
 	elec.addEdge("coen244", "coen352");
 
+
+	//test searchEdge
 	cout << "engr201 -> engr392 exists? " << elec.searchEdge("engr201", "engr392") << endl;
 
 	cout << "engr391 -> math204 exists? " << elec.searchEdge("engr391", "math204") << endl;
 		
 		
-		
+	//operator overloading test 
+	//equality operator:
+	Prereq G1, G2; 
+	G1.addVertex("coen231");
+	G2.addVertex("coen231");
+	G2.addVertex("elec273");
+	//cout << G1 == G2;
+	if (G1 == G2) {
+		cout << "G1 is the same as G2";
+	}
+	else
+		cout << "G1 is not the same as G2";
+	
+
+	
 		
 		
 		

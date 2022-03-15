@@ -90,9 +90,6 @@ bool Prereq::searchEdge(string sv, string ev) {
 	return false;
 }
 
-void Prereq::display() const {
-
-}
 
 string Prereq::toString() const {
 	return " ";
@@ -112,7 +109,7 @@ void Prereq::display(Edge& e) const {
 
 
 
-//operator overloading: 
+////////////////////funcs for operator overloading////////////////////////////////////
 
 
 //access funcs
@@ -165,5 +162,28 @@ bool Prereq::operator==(Prereq &G2) {
 
 	return true;
 			
+	
+}
+
+
+//func to display the whole graph 
+void Prereq::display() const {
+
+	for (int i = 0; i < vCounter; i++) {
+		cout << vertexArr[i].getVertexName() << endl;
+			
+	}
+
+	for (int j = 0; j < eCounter; j++) {
+		cout << edgeArr[j].getStartVertex()->getVertexName() << edgeArr[j].getEndVertex()->getVertexName() << endl;
+
+	}
+
+}
+
+//func to overload +
+void Prereq::operator+(Prereq &G1, Prereq& G2) {
+	G1.display();
+	G2.display();
 	
 }

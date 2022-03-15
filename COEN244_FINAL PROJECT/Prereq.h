@@ -34,10 +34,12 @@ public:
 	int geteCounter();
 	int getvCounter();
 
+	//func to display the whole graph 
+	virtual void display() const;
+
 	//funcs to be implemented
 	virtual bool removeVertex(Vertex& v);
 	virtual bool removeEdge(Edge& e);
-	virtual void display() const;
 	virtual string toString() const;
 	virtual bool clean();
 	virtual void display(Vertex& v) const;
@@ -47,5 +49,10 @@ public:
 
 	//G1 == G2 returns true if G1 and G2 have the exact same vertices and edges
 	bool operator==(Prereq&);
+
+	//func to overload +
+	friend void operator+(Prereq&, Prereq&);
+
+
 
 };

@@ -94,7 +94,7 @@ int main() {
 	//equality operator:
 	Prereq G1, G2; 
 	G1.addVertex("coen231");
-	G2.addVertex("coen231");
+	G2.addVertex("math204");
 	G2.addVertex("elec273");
 	//cout << G1 == G2;
 	if (G1 == G2) {
@@ -104,7 +104,8 @@ int main() {
 		cout << "G1 is not the same as G2";
 	
 
-	
+	//test for display func
+	elec.display();
 		
 		
 		

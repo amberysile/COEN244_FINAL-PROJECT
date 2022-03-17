@@ -6,6 +6,8 @@ using namespace std;
 
 class Edge {
 
+	friend class Graph; //class Graph has access to all members (attributes & funcs) of class Edge
+
 private: 
 	int weight; 
 

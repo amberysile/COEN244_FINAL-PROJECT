@@ -74,5 +74,35 @@ public:
 	virtual void display(Edge& e) const = 0;
 
 
+	//access funcs
+	Vertex* getVertexArr();
+	Edge* getEdgeArr();
+	int geteCounter();
+	int getvCounter();
+
+	//operator overloading:
+
+	//G1 == G2 returns true if G1 and G2 have the exact same vertices and edges
+	bool operator==(Graph&);
+
+
+	//G1 = G2
+	const Graph& operator=(const Graph&);
+
+	//++G
+	Graph& operator++();
+
+	//G++
+	Graph& operator++(int);
+
+	//G3 = G1 + G2
+	//Graph& operator+(Graph&);
+
+	//G1>G2
+	bool operator>(Graph& G2);
+
+	// <<G
+	friend ostream& operator<<(ostream& output, const Graph& G);
 
 };
+

@@ -12,7 +12,7 @@ Vertex::Vertex() {
 	counter++; 
 	ID = counter; 
 	vertexName = " ";
-	cout << "The Vertex Constructor is called." << endl; 
+	//cout << "The Vertex Constructor is called." << endl; 
 
 }
 

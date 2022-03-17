@@ -9,7 +9,7 @@ Edge::Edge() {
 	weight = 0; 
 	//startVertex = new Vertex();
 	//endVertex = new Vertex();
-	cout << "The Edge Constructor is called." << endl;
+	//cout << "The Edge Constructor is called." << endl;
 }
 
 Edge::~Edge() {

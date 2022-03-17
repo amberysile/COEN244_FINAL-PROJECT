@@ -40,9 +40,10 @@ using namespace std;
 
 int main() {
 
+	//create an object of type Prereq
 	Prereq elec;
 
-	//test addVertex func
+	//test addVertex func to add all vertices in the graph (each vertex is a course name)
 	elec.addVertex("coen231"); //this gets ID 1
 	elec.addVertex("coen243");
 	elec.addVertex("coen244");
@@ -59,15 +60,15 @@ int main() {
 	elec.addVertex("math205");
 	elec.addVertex("phys205");
 
-	//test searchVertex func
+	//test searchVertex func to see if the vertex is successfully added
 	cout << elec.searchVertex("coen231") << endl;
 	cout << elec.searchVertex("elec273") << endl;
 	cout << elec.searchVertex("math205") << endl;
 	cout << elec.searchVertex("phys205") << endl;
-	cout<< elec.searchVertex("soen300");
+	cout<< elec.searchVertex("soen300"); //this should output 0 because we dont have soen300 as a vertex
 		
-	//math204 is a pre-req of coen231
-	elec.addEdge("math204", "coen231");
+	//test addEdge func to specify which course is a pre-req of which 
+	elec.addEdge("math204", "coen231"); //math204 is a pre-req of coen231
 	elec.addEdge("math204", "coen243");
 	elec.addEdge("math204", "engr233");
 	elec.addEdge("math204", "engr213");
@@ -85,10 +86,15 @@ int main() {
 
 
 	//test searchEdge
-	cout << "engr201 -> engr392 exists? " << elec.searchEdge("engr201", "engr392") << endl;
-
-	cout << "engr391 -> math204 exists? " << elec.searchEdge("engr391", "math204") << endl;
+	cout << " Is engr201 a pre-req for engr392 ? " << elec.searchEdge("engr201", "engr392") << endl;
+	cout << "Is engr391 a prereq of math204 ? " << elec.searchEdge("engr391", "math204") << endl;
 		
+
+	//test for display func to display all  vertices and edges of a graph (which is an object of type Prereq)
+	elec.display();
+
+
+
 		
 	//operator overloading test 
 	//equality operator:
@@ -96,21 +102,31 @@ int main() {
 	G1.addVertex("coen231");
 	G2.addVertex("math204");
 	G2.addVertex("elec273");
-	//cout << G1 == G2;
 	if (G1 == G2) {
 		cout << "G1 is the same as G2";
 	}
 	else
-		cout << "G1 is not the same as G2";
+		cout << "G1 is not the same as G2"<<endl;
 	
-
-	//test for display func
-	elec.display();
+	
+	//test G1 = G2
+	cout << "G1 is: " << endl; 
+	G1.display();
+	cout << "G2 is: " << endl;
+	G2.display();
+	G1 = G2; 
+	cout << "G1 is now: " << endl;
+	G1.display();
+	(G2.getVertexArr())[0].setVertexName("engr392"); //change the vertex at index 0
+	cout << "G2 is now: " << endl;
+	G2.display();
+	cout << "G1 is now still: " << endl;
+	G1.display();
 		
-		
-		
-		
-		
+	//test for <<G
+	cout << elec;
+	cout << G1;
+	cout << G2;
 		
 
 

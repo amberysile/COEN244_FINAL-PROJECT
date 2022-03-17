@@ -108,64 +108,6 @@ void Prereq::display(Edge& e) const {
 }
 
 
-
-////////////////////funcs for operator overloading////////////////////////////////////
-
-
-//access funcs
-//func to get the VertexArr
-//return type is a pointer because we are returning an array
-Vertex* Prereq::getVertexArr() {
-	return vertexArr;
-}
-
-Edge* Prereq::getEdgeArr() {
-	return edgeArr;
-}
-
-int Prereq::geteCounter() {
-	return eCounter;
-}
-
-int Prereq::getvCounter() {
-	return vCounter;
-}
-
-
-
-//G1 == G2 returns true if G1 and G2 have the exact same vertices and edges
-bool Prereq::operator==(Prereq &G2) {
-
-	//do if comparison for vCounter and eCounter before entering for loop
-	if (vCounter != G2.geteCounter()) {
-		return false;
-	}
-
-	if (vCounter != G2.geteCounter()) {
-		return false;
-	}
-
-	for (int i = 0; i < vCounter; i++) {
-		if (vertexArr[i].getVertexName() != (G2.getVertexArr())[i].getVertexName()) //compare the string of G1 which calls this func to the string of G2, loop with size of G1
-			return false;
-	}
-
-	for (int j = 0; j < eCounter; j++)
-	{
-		if (edgeArr[j].getStartVertex()->getVertexName() != (G2.getEdgeArr())[j].getStartVertex()->getVertexName())
-			return false;
-
-		if (edgeArr[j].getEndVertex()->getVertexName() != (G2.getEdgeArr())[j].getEndVertex()->getVertexName())
-			return false;
-	}
-	
-
-	return true;
-			
-	
-}
-
-
 //func to display the whole graph 
 void Prereq::display() const {
 
@@ -181,9 +123,3 @@ void Prereq::display() const {
 
 }
 
-//func to overload +
-void Prereq::operator+(Prereq &G1, Prereq& G2) {
-	G1.display();
-	G2.display();
-	
-}

@@ -28,11 +28,6 @@ public:
 	virtual bool addEdge(string sv, string ev);
 	virtual bool searchEdge(string sv, string ev);
 
-	//access funcs
-	Vertex* getVertexArr();
-	Edge* getEdgeArr();
-	int geteCounter();
-	int getvCounter();
 
 	//func to display the whole graph 
 	virtual void display() const;
@@ -45,13 +40,7 @@ public:
 	virtual void display(Vertex& v) const;
 	virtual void display(Edge& e) const;
 
-	//operator overloading:
 
-	//G1 == G2 returns true if G1 and G2 have the exact same vertices and edges
-	bool operator==(Prereq&);
-
-	//func to overload +
-	friend void operator+(Prereq&, Prereq&);
 
 
 

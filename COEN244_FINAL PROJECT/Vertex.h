@@ -1,3 +1,5 @@
+//COEN244 FINAL PROJECT
+
 #pragma once
 #include <iostream>
 using namespace std;
@@ -14,8 +16,16 @@ private:
 
 public: 
 
-	//constructor 
+	//default constructor 
 	Vertex();
+
+	//constructor with parameter 
+	Vertex(string s);
+
+	//copy constructor 
+	Vertex(const Vertex &oldObj);
+
+
 
 	//access func if needed
 	void setVertexName(string s);

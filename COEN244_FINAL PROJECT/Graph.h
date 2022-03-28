@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿//COEN244 FINAL PROJECT
+
+#pragma once
 #include <iostream>
 #include "Vertex.h"
 #include "Edge.h"
@@ -101,8 +103,17 @@ public:
 	//G1>G2
 	bool operator>(Graph& G2);
 
+
+	//////////////////#5 REQUIREMENT/////////////////
 	// <<G
 	friend ostream& operator<<(ostream& output, const Graph& G);
+
+
+	//////////////////#6 REQUIREMENT/////////////////
+	void vertexPath(string n);
+
+
+
 
 };
 

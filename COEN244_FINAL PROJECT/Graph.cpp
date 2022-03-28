@@ -1,24 +1,38 @@
+//COEN244 FINAL PROJECT
+
 #include <iostream>
 #include "Vertex.h"
 #include "Edge.h"
 #include "Graph.h"
 using namespace std;
 
+
 //constructor
 Graph::Graph() {
 
 }
 
+
+
+/////////////////EXCEPTION HANDLING//////////////
 //constructor to take a parameter
 Graph::Graph(int c) {
-
-	edgeArr = new Edge[c];
-	vertexArr = new Vertex[c];
-	capacity = c; 
-	vCounter = 0;
-	eCounter = 0;
+	try {
+			if (c <= 0) throw string("Creating invalid size graph");
+		
+		edgeArr = new Edge[c];
+		vertexArr = new Vertex[c];
+		capacity = c;
+		vCounter = 0;
+		eCounter = 0;
+	}
+	catch (string str) {
+		cout << "Exception: " << str << endl;
+	}
 
 }
+
+
 
 //destructor
 Graph::~Graph() {
@@ -187,4 +201,32 @@ ostream& operator<<(ostream& output, const Graph& G) {
 
 	return output;               
 }
+
+
+//////////////////////#6 REQUIREMENT////////////////////
+void Graph::vertexPath(string s) {
+	cout << "From Vertex: " << s << " the paths are:" << endl;
+	for (int j = 0; j < eCounter; j++)
+	{
+		if (edgeArr[j].getStartVertex()->getVertexName() == s) {
+			cout << edgeArr[j].getEndVertex()->getVertexName() << endl;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

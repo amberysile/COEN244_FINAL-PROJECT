@@ -1,3 +1,8 @@
+//COEN244 ASSIGN3
+//SILE YANG - 40028543
+//THIS IS MY ORIGINAL WORK 
+//16-MARCH-2022
+
 #include <iostream>
 #include "Vertex.h"
 #include "Edge.h"
@@ -5,37 +10,6 @@
 #include "Prereq.h"
 using namespace std;
 
-//"coen231",	  // 0
-//"coen243",	  //1
-//"coen244",	  //2
-//"coen352",	  //3
-//"elec273",	  //4
-//"engr201",	  //5
-//"engr202",	  //6
-//"engr213",	  //7
-//"engr233",	  //8
-//"engr301",	  //9
-//"engr391",	  //10
-//"engr392",	  //11
-//"math204",	  //12
-//"math205",	  //13
-//"phys205",	  //14
-//courseDependancy.addEdge("math204", "coen231"); //math 204 is a prereq of coen231
-//courseDependancy.addEdge(12, 1);
-//courseDependancy.addEdge(12, 8);
-//courseDependancy.addEdge(12, 7);
-//courseDependancy.addEdge(13, 8);
-//courseDependancy.addEdge(13, 7);
-//courseDependancy.addEdge(14, 4);
-//courseDependancy.addEdge(6, 11);
-//courseDependancy.addEdge(5, 11);
-//courseDependancy.addEdge(0, 3);
-//courseDependancy.addEdge(1, 2);
-//courseDependancy.addEdge(1, 10);
-//courseDependancy.addEdge(8, 10);
-//courseDependancy.addEdge(7, 10);
-//courseDependancy.addEdge(7, 4);
-//courseDependancy.addEdge(2, 3);
 
 
 int main() {
@@ -60,6 +34,8 @@ int main() {
 	elec.addVertex("math205");
 	elec.addVertex("phys205");
 
+
+	/////////////////#8 REQUIREMENT///////////////////
 	//test searchVertex func to see if the vertex is successfully added
 	cout << elec.searchVertex("coen231") << endl;
 	cout << elec.searchVertex("elec273") << endl;
@@ -67,6 +43,8 @@ int main() {
 	cout << elec.searchVertex("phys205") << endl;
 	cout<< elec.searchVertex("soen300"); //this should output 0 because we dont have soen300 as a vertex
 		
+
+
 	//test addEdge func to specify which course is a pre-req of which 
 	elec.addEdge("math204", "coen231"); //math204 is a pre-req of coen231
 	elec.addEdge("math204", "coen243");
@@ -85,10 +63,17 @@ int main() {
 	elec.addEdge("coen244", "coen352");
 
 
+
+
+
+	/////////////////#7 REQUIREMENT///////////////////
 	//test searchEdge
 	cout << " Is engr201 a pre-req for engr392 ? " << elec.searchEdge("engr201", "engr392") << endl;
 	cout << "Is engr391 a prereq of math204 ? " << elec.searchEdge("engr391", "math204") << endl;
 		
+
+
+
 
 	//test for display func to display all  vertices and edges of a graph (which is an object of type Prereq)
 	elec.display();
@@ -122,14 +107,21 @@ int main() {
 	G2.display();
 	cout << "G1 is now still: " << endl;
 	G1.display();
-		
+	
+
+
+
+	////////////#5 REQUIREMENT OF THE PROJECT////////
 	//test for <<G
 	cout << elec;
 	cout << G1;
 	cout << G2;
-		
+	
 
+	
 
+	/////////////////#6 REQUIREMENT////////////////////////////
+	elec.vertexPath("math204");
 
 
 	return 0;

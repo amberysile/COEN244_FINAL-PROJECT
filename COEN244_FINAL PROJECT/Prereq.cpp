@@ -1,3 +1,5 @@
+//COEN244 FINAL PROJECT
+
 #include <iostream>
 #include "Vertex.h"
 #include "Edge.h"
@@ -9,6 +11,14 @@ using namespace std;
 Prereq::Prereq():Graph(200) {
 
 }
+
+
+/////////////////EXCEPTION HANDLING//////////////
+//initialize the size of capacity of the graph to be -200
+//Prereq::Prereq() :Graph(-200) {
+//
+//}
+
 
 Prereq::~Prereq() {
 
@@ -42,6 +52,8 @@ bool Prereq::removeVertex(Vertex& v) {
 	return true;
 }
 
+
+
 bool Prereq::addEdge(string sv, string ev) {
 	//true if capacity of the array is greater than size
 	if (capacity > eCounter) {
@@ -63,6 +75,8 @@ bool Prereq::removeEdge(Edge& e) {
 	return true;
 }
 
+
+/////////////////#8 REQUIREMENT///////////////////
 //this func searches a vertex
 bool Prereq::searchVertex(string s) {
 	for (int i = 0; i < vCounter; i++) {
@@ -81,6 +95,8 @@ int Prereq::searchVertexIndex(string s) {
 	return -1;
 }
 
+
+/////////////////#7 REQUIREMENT/////////////////////
 bool Prereq::searchEdge(string sv, string ev) {
 	for (int i = 0; i < eCounter; i++)
 	{

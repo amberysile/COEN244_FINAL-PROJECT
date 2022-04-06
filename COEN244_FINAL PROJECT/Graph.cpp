@@ -189,7 +189,7 @@ ostream& operator<<(ostream& output, const Graph& G) {
 		output << G.vertexArr[i].getVertexName() << endl;
 
 	}
-
+	cout << "\n" << endl;
 
 	output << "Edges are: " << endl;
 	for (int j = 0; j < G.eCounter; j++)
@@ -205,7 +205,7 @@ ostream& operator<<(ostream& output, const Graph& G) {
 
 //////////////////////#6 REQUIREMENT////////////////////
 void Graph::vertexPath(string s) {
-	cout << "From Vertex: " << s << " the paths are:" << endl;
+	cout << "From Vertex " << s << ", the paths are:" << endl;
 	for (int j = 0; j < eCounter; j++)
 	{
 		if (edgeArr[j].getStartVertex()->getVertexName() == s) {

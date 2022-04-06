@@ -37,11 +37,14 @@ int main() {
 
 	/////////////////#8 REQUIREMENT///////////////////
 	//test searchVertex func to see if the vertex is successfully added
-	cout << elec.searchVertex("coen231") << endl;
-	cout << elec.searchVertex("elec273") << endl;
-	cout << elec.searchVertex("math205") << endl;
-	cout << elec.searchVertex("phys205") << endl;
-	cout<< elec.searchVertex("soen300"); //this should output 0 because we dont have soen300 as a vertex
+	cout << "_________________________________________________________________________________________" << endl << endl;
+	cout << "Test searchVertex func to see if the vertex is successfully added:" << endl;
+	cout <<"Is coen231 added?	"<< elec.searchVertex("coen231") << endl;
+	cout <<"Is elec273 added?	"<< elec.searchVertex("elec273") << endl;
+	cout <<"Is math205 added?	"<< elec.searchVertex("math205") << endl;
+	cout <<"Is phys205 added?	"<<elec.searchVertex("phys205") << endl;
+	cout << "Is soen300 added?	" << elec.searchVertex("soen300") << endl; //this should output 0 because we dont have soen300 as a vertex
+	cout << "_________________________________________________________________________________________" <<endl<< endl;
 		
 
 
@@ -68,21 +71,28 @@ int main() {
 
 	/////////////////#7 REQUIREMENT///////////////////
 	//test searchEdge
-	cout << " Is engr201 a pre-req for engr392 ? " << elec.searchEdge("engr201", "engr392") << endl;
-	cout << "Is engr391 a prereq of math204 ? " << elec.searchEdge("engr391", "math204") << endl;
+	cout << "Test searchEdge func to see if a course is a prereq of the other: " << endl;
+	cout << "Is coen244 a prereq of coen352?     " << elec.searchEdge("coen244", "coen352") << endl;
+	cout << "Is coen352 a prereq of coen244?     " << elec.searchEdge("coen352", "coen244") << endl;
+	cout << "Is engr201 a pre-req for engr392?   " << elec.searchEdge("engr201", "engr392") << endl;
+	cout << "Is engr391 a prereq of math204?     " << elec.searchEdge("engr391", "math204") << endl;
+	cout << "_________________________________________________________________________________________" << endl << endl;
 		
 
 
 
 
 	//test for display func to display all  vertices and edges of a graph (which is an object of type Prereq)
-	elec.display();
+	//elec.display();
 
 
 
 		
 	//operator overloading test 
 	//equality operator:
+	cout << "Operator overloading test" << endl;
+
+	cout << "Test G1 == G2 to see if two graphs are the same: " << endl<<endl; 
 	Prereq G1, G2; 
 	G1.addVertex("coen231");
 	G2.addVertex("math204");
@@ -97,30 +107,40 @@ int main() {
 	//test G1 = G2
 	cout << "G1 is: " << endl; 
 	G1.display();
+	cout << "\n" << endl;
 	cout << "G2 is: " << endl;
 	G2.display();
+	cout << "\n" << endl;
+
 	G1 = G2; 
-	cout << "G1 is now: " << endl;
+	cout <<"After calling G1=G2, G1 is now: " << endl;
 	G1.display();
+	cout << "\n" << endl;
+
 	(G2.getVertexArr())[0].setVertexName("engr392"); //change the vertex at index 0
-	cout << "G2 is now: " << endl;
+	cout << "After changing first vertex in G2 to engr392, G2 is now: " << endl;
 	G2.display();
-	cout << "G1 is now still: " << endl;
+	cout << "\n" << endl;
+	cout << "Test to see if G1 is still the same as the previous G2: " << endl;
 	G1.display();
+	cout << "_________________________________________________________________________________________" << endl << endl;
 	
 
 
 
 	////////////#5 REQUIREMENT OF THE PROJECT////////
 	//test for <<G
+	cout << "Test <<G to see all the veticies & edges of the graph: " <<endl<< endl;
 	cout << elec;
-	cout << G1;
-	cout << G2;
+	//cout << G1;
+	//cout << G2;
+	cout << "_________________________________________________________________________________________" << endl << endl;
 	
 
 	
 
 	/////////////////#6 REQUIREMENT////////////////////////////
+	cout << "Test vertexPath func to see what courses I can take after a prereq: " <<endl <<endl;
 	elec.vertexPath("math204");
 
 

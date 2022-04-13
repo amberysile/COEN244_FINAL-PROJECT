@@ -1,4 +1,7 @@
-//COEN244 FINAL PROJECT
+//COEN244 FINAL PROJECT 
+//SILE YANG - 40028543 && MIKHAIL ANGELO PELLAS - 40128268
+//THIS PROJECT IS OUR ORIGINAL WORK
+//13-04-2022
 
 #include <iostream>
 #include "Vertex.h"
@@ -13,7 +16,7 @@ Prereq::Prereq():Graph(200) {
 }
 
 
-/////////////////EXCEPTION HANDLING//////////////
+///////////////EXCEPTION HANDLING//////////////
 //initialize the size of capacity of the graph to be -200
 //Prereq::Prereq() :Graph(-200) {
 //

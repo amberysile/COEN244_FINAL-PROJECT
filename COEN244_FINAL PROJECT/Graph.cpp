@@ -1,4 +1,7 @@
-//COEN244 FINAL PROJECT
+//COEN244 FINAL PROJECT 
+//SILE YANG - 40028543 && MIKHAIL ANGELO PELLAS - 40128268
+//THIS PROJECT IS OUR ORIGINAL WORK
+//13-04-2022
 
 #include <iostream>
 #include "Vertex.h"
@@ -18,7 +21,7 @@ Graph::Graph() {
 //constructor to take a parameter
 Graph::Graph(int c) {
 	try {
-			if (c <= 0) throw string("Creating invalid size graph");
+			if (c < 0) throw string("Graph cannot be negative.");
 		
 		edgeArr = new Edge[c];
 		vertexArr = new Vertex[c];
@@ -28,6 +31,7 @@ Graph::Graph(int c) {
 	}
 	catch (string str) {
 		cout << "Exception: " << str << endl;
+		exit(1);
 	}
 
 }
@@ -205,11 +209,11 @@ ostream& operator<<(ostream& output, const Graph& G) {
 
 //////////////////////#6 REQUIREMENT////////////////////
 void Graph::vertexPath(string s) {
-	cout << "From Vertex " << s << ", the paths are:" << endl;
+	cout << "From Vertex " << s << ", the path is:" << endl;
 	for (int j = 0; j < eCounter; j++)
 	{
 		if (edgeArr[j].getStartVertex()->getVertexName() == s) {
-			cout << edgeArr[j].getEndVertex()->getVertexName() << endl;
+			cout << edgeArr[j].getEndVertex()->getVertexName() <<"\n" << endl;
 		}
 	}
 

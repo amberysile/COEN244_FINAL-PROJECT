@@ -1,7 +1,7 @@
-//COEN244 ASSIGN3
-//SILE YANG - 40028543
-//THIS IS MY ORIGINAL WORK 
-//16-MARCH-2022
+//COEN244 FINAL PROJECT 
+//SILE YANG - 40028543 && MIKHAIL ANGELO PELLAS - 40128268
+//THIS PROJECT IS OUR ORIGINAL WORK
+//13-04-2022
 
 #include <iostream>
 #include "Vertex.h"
@@ -16,6 +16,7 @@ int main() {
 
 	//create an object of type Prereq
 	Prereq elec;
+	elec.display(); //empty graph
 
 	//test addVertex func to add all vertices in the graph (each vertex is a course name)
 	elec.addVertex("coen231"); //this gets ID 1
@@ -58,12 +59,12 @@ int main() {
 	elec.addEdge("engr202", "engr392");
 	elec.addEdge("engr201", "engr392");
 	elec.addEdge("coen231", "coen352");
-	elec.addEdge("coen243", "coen244");
-	elec.addEdge("coen243", "engr391");
 	elec.addEdge("engr233", "engr391");
 	elec.addEdge("engr213", "engr391");
 	elec.addEdge("engr213", "elec273");
+	elec.addEdge("coen243", "coen244");
 	elec.addEdge("coen244", "coen352");
+	
 
 
 
@@ -95,34 +96,48 @@ int main() {
 	cout << "Test G1 == G2 to see if two graphs are the same: " << endl<<endl; 
 	Prereq G1, G2; 
 	G1.addVertex("coen231");
-	G2.addVertex("math204");
-	G2.addVertex("elec273");
+	G1.addVertex("coen244");
+	G1.addVertex("elec273");
+	G1.addVertex("coen352");
+	G1.addEdge("coen244","coen352");
+
+	G2.addVertex("engr201");
+	G2.addVertex("engr202");
+	G2.addVertex("engr392");
+	G2.addEdge("engr201", "engr392");
+	G2.addEdge("engr202", "engr392");
+
 	if (G1 == G2) {
-		cout << "G1 is the same as G2";
+		cout << "G1 is the same as G2" << endl;
 	}
 	else
 		cout << "G1 is not the same as G2"<<endl;
 	
 	
-	//test G1 = G2
+	//tes
+
+
+
+
+
 	cout << "G1 is: " << endl; 
-	G1.display();
+	cout << G1;
 	cout << "\n" << endl;
 	cout << "G2 is: " << endl;
-	G2.display();
+	cout << G2;
 	cout << "\n" << endl;
 
 	G1 = G2; 
 	cout <<"After calling G1=G2, G1 is now: " << endl;
-	G1.display();
+	cout << G1;
 	cout << "\n" << endl;
 
-	(G2.getVertexArr())[0].setVertexName("engr392"); //change the vertex at index 0
-	cout << "After changing first vertex in G2 to engr392, G2 is now: " << endl;
-	G2.display();
-	cout << "\n" << endl;
-	cout << "Test to see if G1 is still the same as the previous G2: " << endl;
-	G1.display();
+	//(G2.getVertexArr())[0].setVertexName("engr392"); //change the vertex at index 0
+	//cout << "After changing first vertex in G2 to engr392, G2 is now: " << endl;
+	//G2.display();
+	//cout << "\n" << endl;
+	//cout << "Test to see if G1 is still the same as the previous G2: " << endl;
+	//G1.display();
 	cout << "_________________________________________________________________________________________" << endl << endl;
 	
 
@@ -130,7 +145,7 @@ int main() {
 
 	////////////#5 REQUIREMENT OF THE PROJECT////////
 	//test for <<G
-	cout << "Test <<G to see all the veticies & edges of the graph: " <<endl<< endl;
+	cout << "Test <<G to see all the veticies & edges of the graph elec: " <<endl<< endl;
 	cout << elec;
 	//cout << G1;
 	//cout << G2;
@@ -142,6 +157,8 @@ int main() {
 	/////////////////#6 REQUIREMENT////////////////////////////
 	cout << "Test vertexPath func to see what courses I can take after a prereq: " <<endl <<endl;
 	elec.vertexPath("math204");
+	elec.vertexPath("coen243");
+	elec.vertexPath("coen244");
 
 
 	return 0;

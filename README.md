@@ -1,3 +1,2 @@
-# COEN244_FINAL-PROJECT
-Graph application 
-YO ANGELO, WE NEED 15/15 ON THIS PROJECT!
+this application uses object oriented programming in C++ to present students with a course sequence plan
+all possible ways as well as the fastest way to finish a program are give to the students
